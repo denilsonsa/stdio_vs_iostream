@@ -1,0 +1,23 @@
+syntax: glob
+*.o
+*.lo
+*.la
+\#*#
+.*.rej
+*.rej
+.*~
+*~
+.#*
+.DS_Store
+*.bak
+.*.swp
+.swp
+.swo
+*.pyc
+*.pyo
+
+cout
+cout_nosync
+printf
+puts
+putchar

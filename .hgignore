@@ -16,8 +16,10 @@ syntax: glob
 *.pyc
 *.pyo
 
-cout
-cout_nosync
+cout_endl_sync
+cout_noendl_sync
+cout_endl_nosync
+cout_noendl_nosync
 printf
 puts
 putchar

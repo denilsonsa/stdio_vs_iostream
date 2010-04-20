@@ -1,0 +1,46 @@
+# To open all 5 files at Vim, use:
+#   :source stdio_vs_iostream.vimsession
+# To save the session for future opening, use:
+#   :set sessionoptions=blank,buffers,sesdir,winsize
+#   :mksession! stdio_vs_iostream.vimsession
+
+#CPPFLAGS Extra flags to give to the C preprocessor and programs that use it (the C and Fortran compilers).
+#CFLAGS   Extra flags to give to the C compiler.
+#CXXFLAGS Extra flags to give to the C++ compiler.
+#LDFLAGS  Extra flags to give to compilers when they are supposed to invoke the linker, 'ld'.
+
+#Standard variables:
+CC  = gcc
+CXX = g++
+CFLAGS   = -Wall -O2 $(EXTRACFLAGS)
+CXXFLAGS = $(CFLAGS)
+LDFLAGS  = -lm
+
+#=====================================#
+#  No need to change below this line  #
+#=====================================#
+
+PROGS = cout cout_nosync printf $(EXTRAPROGS)
+
+#Basic rules
+.PHONY: all clean bench
+all: $(PROGS)
+
+clean:
+	for a in $(PROGS); do \
+		rm -f $$a ; \
+	done
+
+bench: $(PROGS)
+	for a in $(PROGS); do \
+		echo Running "$$a"...  ;\
+		time ./$$a > /dev/null ; \
+	done
+
+#Some implicit rules
+# (make already has a built-in default compile command)
+cout: cout.cpp
+cout_nosync: cout_nosync.cpp
+printf: printf.c
+putchar: putchar.c
+puts: puts.c

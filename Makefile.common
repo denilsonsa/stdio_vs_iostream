@@ -27,10 +27,7 @@ clean:
 	done
 
 bench: $(PROGS)
-	for a in $(PROGS); do \
-		echo Running "$$a"...  ;\
-		time ./$$a > /dev/null ; \
-	done
+	../benchmark.py $(PROGS)
 
 #Some implicit rules
 # (make already has a built-in default compile command)

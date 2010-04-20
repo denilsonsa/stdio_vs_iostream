@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j;
+	int i;
 
 	for(i=0; i<MAXLINES; i++)
 	{

@@ -4,10 +4,12 @@ Some simple experiments trying to measure the performance of C stdio.h functions
 
 
 How to use:
+
 1. Enter one of the subdirectories.
 2. Run 'make bench'.
 
 Detailed description:
+
 * Each subdirectory has a small Makefile that contains only specific variables
   for the programs in that directory.
 * All Makefiles include the Makefile.common, which is the one responsible for
